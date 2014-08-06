@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		778FEA5D1992727900604393 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778FEA5C1992727900604393 /* CoreServices.framework */; };
+		778FEA5F1992727900604393 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778FEA5E1992727900604393 /* CoreFoundation.framework */; };
+		778FEA611992727900604393 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778FEA601992727900604393 /* CoreData.framework */; };
+		778FEA631992727A00604393 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778FEA621992727A00604393 /* Foundation.framework */; };
+		778FEA691992727A00604393 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 778FEA671992727A00604393 /* InfoPlist.strings */; };
+		778FEA6B1992727A00604393 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 778FEA6A1992727A00604393 /* main.c */; };
+		778FEA6D1992727A00604393 /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 778FEA6C1992727A00604393 /* GetMetadataForFile.m */; };
+		778FEA701992727A00604393 /* MySpotlightImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 778FEA6F1992727A00604393 /* MySpotlightImporter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		778FEA591992727900604393 /* ComicTag.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComicTag.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
+		778FEA5C1992727900604393 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		778FEA5E1992727900604393 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		778FEA601992727900604393 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		778FEA621992727A00604393 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		778FEA661992727A00604393 /* ComicTag-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ComicTag-Info.plist"; sourceTree = "<group>"; };
+		778FEA681992727A00604393 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		778FEA6A1992727A00604393 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		778FEA6C1992727A00604393 /* GetMetadataForFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
+		778FEA6E1992727A00604393 /* MySpotlightImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySpotlightImporter.h; sourceTree = "<group>"; };
+		778FEA6F1992727A00604393 /* MySpotlightImporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySpotlightImporter.m; sourceTree = "<group>"; };
+		778FEA711992727A00604393 /* Importer Read Me.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Importer Read Me.txt"; sourceTree = "<group>"; };
+		778FEA721992727A00604393 /* ComicTag-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ComicTag-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		778FEA561992727900604393 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				778FEA5F1992727900604393 /* CoreFoundation.framework in Frameworks */,
+				778FEA611992727900604393 /* CoreData.framework in Frameworks */,
+				778FEA5D1992727900604393 /* CoreServices.framework in Frameworks */,
+				778FEA631992727A00604393 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		778FEA501992727900604393 = {
+			isa = PBXGroup;
+			children = (
+				778FEA641992727A00604393 /* ComicTag */,
+				778FEA5B1992727900604393 /* Frameworks */,
+				778FEA5A1992727900604393 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		778FEA5A1992727900604393 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				778FEA591992727900604393 /* ComicTag.mdimporter */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		778FEA5B1992727900604393 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				778FEA5C1992727900604393 /* CoreServices.framework */,
+				778FEA5E1992727900604393 /* CoreFoundation.framework */,
+				778FEA601992727900604393 /* CoreData.framework */,
+				778FEA621992727A00604393 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		778FEA641992727A00604393 /* ComicTag */ = {
+			isa = PBXGroup;
+			children = (
+				778FEA6C1992727A00604393 /* GetMetadataForFile.m */,
+				778FEA6E1992727A00604393 /* MySpotlightImporter.h */,
+				778FEA6F1992727A00604393 /* MySpotlightImporter.m */,
+				778FEA711992727A00604393 /* Importer Read Me.txt */,
+				778FEA651992727A00604393 /* Supporting Files */,
+			);
+			path = ComicTag;
+			sourceTree = "<group>";
+		};
+		778FEA651992727A00604393 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				778FEA661992727A00604393 /* ComicTag-Info.plist */,
+				778FEA671992727A00604393 /* InfoPlist.strings */,
+				778FEA6A1992727A00604393 /* main.c */,
+				778FEA721992727A00604393 /* ComicTag-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		778FEA581992727900604393 /* ComicTag */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 778FEA751992727A00604393 /* Build configuration list for PBXNativeTarget "ComicTag" */;
+			buildPhases = (
+				778FEA551992727900604393 /* Sources */,
+				778FEA561992727900604393 /* Frameworks */,
+				778FEA571992727900604393 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ComicTag;
+			productName = ComicTag;
+			productReference = 778FEA591992727900604393 /* ComicTag.mdimporter */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		778FEA511992727900604393 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Michael Ferenduros";
+			};
+			buildConfigurationList = 778FEA541992727900604393 /* Build configuration list for PBXProject "ComicTag" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 778FEA501992727900604393;
+			productRefGroup = 778FEA5A1992727900604393 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				778FEA581992727900604393 /* ComicTag */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		778FEA571992727900604393 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				778FEA691992727A00604393 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		778FEA551992727900604393 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				778FEA701992727A00604393 /* MySpotlightImporter.m in Sources */,
+				778FEA6B1992727A00604393 /* main.c in Sources */,
+				778FEA6D1992727A00604393 /* GetMetadataForFile.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		778FEA671992727A00604393 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				778FEA681992727A00604393 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		778FEA731992727A00604393 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		778FEA741992727A00604393 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		778FEA761992727A00604393 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ComicTag/ComicTag-Prefix.pch";
+				INFOPLIST_FILE = "ComicTag/ComicTag-Info.plist";
+				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
+				LIBRARY_STYLE = BUNDLE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mdimporter;
+			};
+			name = Debug;
+		};
+		778FEA771992727A00604393 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ComicTag/ComicTag-Prefix.pch";
+				INFOPLIST_FILE = "ComicTag/ComicTag-Info.plist";
+				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
+				LIBRARY_STYLE = BUNDLE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mdimporter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		778FEA541992727900604393 /* Build configuration list for PBXProject "ComicTag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				778FEA731992727A00604393 /* Debug */,
+				778FEA741992727A00604393 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		778FEA751992727A00604393 /* Build configuration list for PBXNativeTarget "ComicTag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				778FEA761992727A00604393 /* Debug */,
+				778FEA771992727A00604393 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 778FEA511992727900604393 /* Project object */;
+}
