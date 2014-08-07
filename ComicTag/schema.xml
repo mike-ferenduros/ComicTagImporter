@@ -36,8 +36,10 @@
 			</allattrs>
 			<displayattrs>
 				kMDItemTitle
+				kMDItemPublishers
 				com_chunkyreader_writers
 				com_chunkyreader_artists
+				com_chunkyreader_colorists
 			</displayattrs>
 		</type>
 
@@ -57,8 +59,10 @@
 			</allattrs>
 			<displayattrs>
 				kMDItemTitle
+				kMDItemPublishers
 				com_chunkyreader_writers
 				com_chunkyreader_artists
+				com_chunkyreader_colorists
 			</displayattrs>
 		</type>
 

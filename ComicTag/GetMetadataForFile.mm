@@ -52,10 +52,10 @@ BOOL ParseComicRack( NSData *data, NSMutableDictionary *attribs )
 	NSString *issue = [meta stringValueForKeyPath:@"Number"];
 	NSString *vol = [meta stringValueForKeyPath:@"Volume"];
 
-	if( series )				attribs[kMDComicSeries] = series;
-	if( title )					attribs[kMDComicTitle] = title;
-	if( issue )					attribs[kMDComicIssue] = issue;
-	if( vol && vol.intValue )	attribs[kMDComicVolume] = @(vol.intValue);
+	if( series )				{ didStuff = YES; attribs[kMDComicSeries] = series; }
+	if( title )					{ didStuff = YES; attribs[kMDComicTitle] = title; }
+	if( issue )					{ didStuff = YES; attribs[kMDComicIssue] = issue; }
+	if( vol && vol.intValue )	{ didStuff = YES; attribs[kMDComicVolume] = @(vol.intValue); }
 
 	if( series )
 	{
@@ -99,6 +99,13 @@ BOOL ParseComicRack( NSData *data, NSMutableDictionary *attribs )
 		didStuff = YES;
 	}
 
+	NSString *url = [meta stringValueForKeyPath:@"Web"];
+	if( url )
+	{
+		attribs[(__bridge NSString*)kMDItemURL] = url;
+		didStuff = YES;
+	}
+
 	NSDictionary *roleMap = @{
 		@"Writer":		kMDComicWriters,
 		@"Penciller":	kMDComicArtists,
@@ -112,39 +119,38 @@ BOOL ParseComicRack( NSData *data, NSMutableDictionary *attribs )
 	for( NSString *role in roleMap )
 	{
 		NSString *people = [meta stringValueForKeyPath:role];
-		if( people )
+		for( NSString *person in [people componentsSeparatedByString:@","] )
 		{
-			for( NSString *person in [people componentsSeparatedByString:@","] )
+			NSString *trimmed = [person stringByTrimmingCharactersInSet:whitespace];
+			if( trimmed.length == 0 )
+				continue;
+
+			NSString *mdKey = roleMap[role];
+			if( mdKey )
 			{
-				NSString *trimmed = [person stringByTrimmingCharactersInSet:whitespace];
-				if( trimmed.length )
-				{
-					NSString *mdKey = roleMap[role];
-					NSMutableArray *specialists = attribs[mdKey];
-					if( !specialists )
-						attribs[mdKey] = specialists = [NSMutableArray array];
+				NSMutableArray *specialists = attribs[mdKey];
+				if( !specialists )
+					attribs[mdKey] = specialists = [NSMutableArray array];
 
-					if( ![specialists containsObject:trimmed] )
-						[specialists addObject:trimmed];
-
-					NSString *authorKey = (__bridge NSString*)kMDItemAuthors;//(mdKey && [@[@"com_chunkyreader_writers",@"com_chunkyreader_artists"] containsObject:mdKey]) ? (__bridge NSString*)kMDItemAuthors : (__bridge NSString*)kMDItemContributors;
-
-					NSMutableArray *authors = attribs[authorKey];
-					if( ![authors isKindOfClass:[NSMutableArray class]] )
-						attribs[authorKey] = authors = [NSMutableArray array];
-
-					if( ![authors containsObject:trimmed] )
-						[authors addObject:trimmed];
-
-					didStuff = YES;
-				}
+				if( ![specialists containsObject:trimmed] )
+					[specialists addObject:trimmed];
 			}
+
+			NSString *authorKey = (__bridge NSString*)kMDItemAuthors;//(mdKey && [@[@"com_chunkyreader_writers",@"com_chunkyreader_artists"] containsObject:mdKey]) ? (__bridge NSString*)kMDItemAuthors : (__bridge NSString*)kMDItemContributors;
+			NSMutableArray *authors = attribs[authorKey];
+			if( ![authors isKindOfClass:[NSMutableArray class]] )
+				attribs[authorKey] = authors = [NSMutableArray array];
+
+			if( ![authors containsObject:trimmed] )
+				[authors addObject:trimmed];
+
+			didStuff = YES;
 		}
 	}
 
-	NSString *year = meta[@"Year"];
-	NSString *month = meta[@"Month"];
-	NSString *day = meta[@"Day"];
+	NSString *year = [meta stringValueForKeyPath:@"Year"];
+	NSString *month = [meta stringValueForKeyPath:@"Month"];
+	NSString *day = [meta stringValueForKeyPath:@"Day"];
 	if( year && month )
 	{
 		int y = year.intValue;
@@ -172,17 +178,11 @@ BOOL ParseCBI( NSData *data, NSMutableDictionary *attribs )
 
 	NSDictionary *root = [NSJSONSerialization JSONObjectWithData:data options:0 error:0];
 	if( !root )
-	{
-		attribs[(__bridge NSString*)kMDItemTitle] = @"No root";
 		return NO;
-	}
 
 	NSDictionary *meta = [root dictionaryValueForKeyPath:@"ComicBookInfo/1.0"];
 	if( !meta )
-	{
-		attribs[(__bridge NSString*)kMDItemTitle] = @"No meta";
 		return NO;
-	}
 		
 	BOOL didStuff = NO;
 
@@ -231,8 +231,8 @@ BOOL ParseCBI( NSData *data, NSMutableDictionary *attribs )
 	}
 
 
-	NSString *year = meta[@"publicationYear"];
-	NSString *month = meta[@"publicationMonth"];
+	NSString *year = [meta stringValueForKeyPath:@"publicationYear"];
+	NSString *month = [meta stringValueForKeyPath:@"publicationMonth"];
 	if( year && month )
 	{
 		int y = year.intValue;
@@ -286,30 +286,30 @@ BOOL ParseCBI( NSData *data, NSMutableDictionary *attribs )
 				continue;
 
 			NSString *trimmed = [name stringByTrimmingCharactersInSet:whitespace];
-			if( trimmed.length )
+			if( trimmed.length == 0 )
+				continue;
+
+			NSString *mdKey = roleMap[role.lowercaseString];
+			if( mdKey )
 			{
-				NSString *mdKey = roleMap[role.lowercaseString];
-				if( mdKey )
-				{
-					NSMutableArray *specialists = attribs[mdKey];
-					if( !specialists )
-						attribs[mdKey] = specialists = [NSMutableArray array];
+				NSMutableArray *specialists = attribs[mdKey];
+				if( !specialists )
+					attribs[mdKey] = specialists = [NSMutableArray array];
 
-					if( ![specialists containsObject:trimmed] )
-						[specialists addObject:trimmed];
-				}
-
-				NSString *authorKey = (__bridge NSString*)kMDItemAuthors;//(mdKey && [@[@"com_chunkyreader_writers",@"com_chunkyreader_artists"] containsObject:mdKey]) ? (__bridge NSString*)kMDItemAuthors : (__bridge NSString*)kMDItemContributors;
-
-				NSMutableArray *authors = attribs[authorKey];
-				if( ![authors isKindOfClass:[NSMutableArray class]] )
-					attribs[authorKey] = authors = [NSMutableArray array];
-				
-				if( ![authors containsObject:trimmed] )
-					[authors addObject:trimmed];
-
-				didStuff = YES;
+				if( ![specialists containsObject:trimmed] )
+					[specialists addObject:trimmed];
 			}
+
+			NSString *authorKey = (__bridge NSString*)kMDItemAuthors;//(mdKey && [@[@"com_chunkyreader_writers",@"com_chunkyreader_artists"] containsObject:mdKey]) ? (__bridge NSString*)kMDItemAuthors : (__bridge NSString*)kMDItemContributors;
+
+			NSMutableArray *authors = attribs[authorKey];
+			if( ![authors isKindOfClass:[NSMutableArray class]] )
+				attribs[authorKey] = authors = [NSMutableArray array];
+			
+			if( ![authors containsObject:trimmed] )
+				[authors addObject:trimmed];
+
+			didStuff = YES;
 		}
 	}
 
@@ -337,14 +337,12 @@ int GetMetadataForZip( NSString *path, NSMutableDictionary *attribs )
 			{
 				if( strcasecmp((const char*)fname.bytes,"ComicInfo.xml")==0 && info.uncompressed_size<1024*1024 )
 				{
-					attribs[(__bridge NSString*)kMDItemTitle] = @"Got comicinfo.xml";
 					NSMutableData *data = [[NSMutableData alloc] initWithLength:info.uncompressed_size];
 					if( unzOpenCurrentFile(unz) == UNZ_OK )
 					{
-						if( unzReadCurrentFile( unz, data.mutableBytes, data.length ) == info.uncompressed_size )
-						{
+						if( unzReadCurrentFile( unz, data.mutableBytes, (unsigned)data.length ) == info.uncompressed_size )
 							gotOne = ParseComicRack( data, attribs );
-						}
+
 						unzCloseCurrentFile( unz );
 					}
 				}
@@ -353,7 +351,7 @@ int GetMetadataForZip( NSString *path, NSMutableDictionary *attribs )
 		while( !gotOne && unzGoToNextFile(unz)==UNZ_OK );
 	}
 
-	//If no CBR, check for CBL
+	//If no ComicRack, check for CBL
 	if( !gotOne )
 	{
 		unz_global_info64 ginfo;
@@ -446,7 +444,7 @@ int GetMetadataForRar( NSString *path, NSMutableDictionary *attribs )
 
 	if( !gotOne && flags.CmtSize>1 )
 	{
-		//Truncate data blob to actual size read
+		//Truncate data blob to actual size read, minus NULL terminator
 		comment.length = flags.CmtSize-1;
 		gotOne = ParseCBI( comment, attribs );
 	}
