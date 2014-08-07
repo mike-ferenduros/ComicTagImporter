@@ -1,0 +1,23 @@
+"com_chunkyreader_series"		= "Series";
+"com_chunkyreader_volume"		= "Volume No.";
+"com_chunkyreader_issue"		= "Issue No.";
+"com_chunkyreader_title"		= "Issue Title";
+"com_chunkyreader_writers"		= "Writer";
+"com_chunkyreader_artists"		= "Artist";
+"com_chunkyreader_inkers"		= "Inker";
+"com_chunkyreader_letterers"	= "Letterer";
+"com_chunkyreader_colorists"	= "Colorist";
+"com_chunkyreader_coverartists"	= "Cover Artist";
+"com_chunkyreader_editors"		= "Editor";
+
+"com_chunkyreader_series.Description"		= "The series the comic belongs to";
+"com_chunkyreader_volume.Description"		= "The comic's volume no.";
+"com_chunkyreader_issue.Description"		= "The comic's issue no.";
+"com_chunkyreader_title.Description"		= "The comic issue's title";
+"com_chunkyreader_writers.Description"		= "The comic's writer(s)";
+"com_chunkyreader_artists.Description"		= "The comic's artist / penciller(s)";
+"com_chunkyreader_inkers.Description"		= "The comic's inker(s)";
+"com_chunkyreader_letterers.Description"	= "The comic's letterer(s)";
+"com_chunkyreader_colorists.Description"	= "The comic's colorist(s)";
+"com_chunkyreader_coverartists.Description"	= "The comic's cover artist(s)";
+"com_chunkyreader_editors.Description"		= "The comic's editor(s)";

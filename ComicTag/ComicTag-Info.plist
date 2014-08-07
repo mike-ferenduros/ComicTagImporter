@@ -11,7 +11,8 @@
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>YOUR_EXTERNAL_RECORD_UTI</string>
+				<string>cx.c3.cbz-archive</string>
+				<string>cx.c3.cbr-archive</string>
 			</array>
 		</dict>
 	</array>
@@ -20,7 +21,7 @@
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
-	<string>com.mike-ferenduros.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.chunkyreader.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -49,27 +50,49 @@
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2014 Michael Ferenduros. All rights reserved.</string>
-	<key>UTExportedTypeDeclarations</key>
+	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.data</string>
-				<string>public.content</string>
+				<string>public.archive</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Your Document Kind String</string>
+			<string>CBZ Comic Archive</string>
 			<key>UTTypeIdentifier</key>
-			<string>YOUR_EXTERNAL_RECORD_UTI</string>
+			<string>cx.c3.cbz-archive</string>
 			<key>UTTypeReferenceURL</key>
-			<string>http://www.company.com/yourproduct</string>
+			<string>http://en.wikipedia.org/wiki/Comic_Book_Archive_file</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>com.apple.ostype</key>
-				<string>XXXX</string>
+				<string>CBZ</string>
 				<key>public.filename-extension</key>
 				<array>
-					<string>YOUR_EXTERNAL_RECORD_EXTENSION</string>
+					<string>cbz</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.archive</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>CBR Comic Archive</string>
+			<key>UTTypeIdentifier</key>
+			<string>cx.c3.cbr-archive</string>
+			<key>UTTypeReferenceURL</key>
+			<string>http://en.wikipedia.org/wiki/Comic_Book_Archive_file</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<string>CBR</string>
+				<key>public.filename-extension</key>
+				<array>
+					<string>cbr</string>
 				</array>
 			</dict>
 		</dict>

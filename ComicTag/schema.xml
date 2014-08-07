@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema version="1.0" xmlns="http://www.apple.com/metadata"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://www.apple.com/metadata file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Resources/MetadataSchema.xsd">
+
+	<attributes>
+		<attribute name='com_chunkyreader_series' type='CFString'/>
+		<attribute name='com_chunkyreader_volume' type='CFNumber'/>
+		<attribute name='com_chunkyreader_issue' type='CFString'/>
+		<attribute name='com_chunkyreader_title' type='CFString'/>
+
+		<attribute name='com_chunkyreader_writers' type='CFString' multivalued='true'/>
+		<attribute name='com_chunkyreader_artists' type='CFString' multivalued='true'/>
+		<attribute name='com_chunkyreader_inkers' type='CFString' multivalued='true'/>
+		<attribute name='com_chunkyreader_letterers' type='CFString' multivalued='true'/>
+		<attribute name='com_chunkyreader_colorists' type='CFString' multivalued='true'/>
+		<attribute name='com_chunkyreader_coverartists' type='CFString' multivalued='true'/>
+		<attribute name='com_chunkyreader_editors' type='CFString' multivalued='true'/>
+	</attributes>
+
+	<types>
+
+		<type name="cx.c3.cbz-archive">
+			<allattrs>
+				com_chunkyreader_series
+				com_chunkyreader_volume
+				com_chunkyreader_issue
+				com_chunkyreader_title
+				com_chunkyreader_writers
+				com_chunkyreader_artists
+				com_chunkyreader_inkers
+				com_chunkyreader_letterers
+				com_chunkyreader_colorists
+				com_chunkyreader_coverartists
+				com_chunkyreader_editors
+			</allattrs>
+			<displayattrs>
+				kMDItemTitle
+				com_chunkyreader_writers
+				com_chunkyreader_artists
+			</displayattrs>
+		</type>
+
+		<type name="cx.c3.cbr-archive">
+			<allattrs>
+				com_chunkyreader_series
+				com_chunkyreader_volume
+				com_chunkyreader_issue
+				com_chunkyreader_title
+				com_chunkyreader_writers
+				com_chunkyreader_artists
+				com_chunkyreader_inkers
+				com_chunkyreader_letterers
+				com_chunkyreader_colorists
+				com_chunkyreader_coverartists
+				com_chunkyreader_editors
+			</allattrs>
+			<displayattrs>
+				kMDItemTitle
+				com_chunkyreader_writers
+				com_chunkyreader_artists
+			</displayattrs>
+		</type>
+
+	</types>
+
+</schema>
