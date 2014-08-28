@@ -249,7 +249,6 @@ BOOL ParseComicRack( NSData *data, NSMutableDictionary *attribs )
 
 BOOL ParseCBI( NSData *data, NSMutableDictionary *attribs )
 {
-	return NO;
 	NSCharacterSet *whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet;
 
 	NSDictionary *root = [NSJSONSerialization JSONObjectWithData:data options:0 error:0];
