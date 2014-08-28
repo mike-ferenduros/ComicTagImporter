@@ -62,6 +62,7 @@
 		778FEA861992B10100604393 /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = 778FEA851992B10100604393 /* schema.xml */; };
 		778FEA891992B6DF00604393 /* schema.strings in Resources */ = {isa = PBXBuildFile; fileRef = 778FEA8B1992B6DF00604393 /* schema.strings */; };
 		77DC914719AFDC2800446019 /* NSDictionary+safety.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DC914619AFDC2800446019 /* NSDictionary+safety.m */; };
+		77DC914A19AFE5EC00446019 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DC914919AFE5EC00446019 /* JSONKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -198,6 +199,8 @@
 		778FEA8A1992B6DF00604393 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/schema.strings; sourceTree = "<group>"; };
 		77DC914519AFDC2800446019 /* NSDictionary+safety.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+safety.h"; sourceTree = "<group>"; };
 		77DC914619AFDC2800446019 /* NSDictionary+safety.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+safety.m"; sourceTree = "<group>"; };
+		77DC914819AFE5EC00446019 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		77DC914919AFE5EC00446019 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +377,8 @@
 				778FEA651992727A00604393 /* Supporting Files */,
 				77DC914519AFDC2800446019 /* NSDictionary+safety.h */,
 				77DC914619AFDC2800446019 /* NSDictionary+safety.m */,
+				77DC914819AFE5EC00446019 /* JSONKit.h */,
+				77DC914919AFE5EC00446019 /* JSONKit.m */,
 			);
 			path = ComicTag;
 			sourceTree = "<group>";
@@ -499,6 +504,7 @@
 				771619F21993055600C40B29 /* rs.cpp in Sources */,
 				771619F61993055600C40B29 /* smallfn.cpp in Sources */,
 				771619DE1993055600C40B29 /* find.cpp in Sources */,
+				77DC914A19AFE5EC00446019 /* JSONKit.m in Sources */,
 				771619DA1993055600C40B29 /* filcreat.cpp in Sources */,
 				771619FA1993055600C40B29 /* system.cpp in Sources */,
 				771619E31993055600C40B29 /* list.cpp in Sources */,

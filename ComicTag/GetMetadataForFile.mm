@@ -9,6 +9,7 @@
 #import <CoreFoundation/CoreFoundation.h>
 #import <Foundation/Foundation.h>
 #import "NSDictionary+safety.h"
+#import "JSONKit.h"
 
 extern "C" {
 #include "unzip.h"
@@ -232,14 +233,21 @@ BOOL ParseComicRack( NSData *data, NSMutableDictionary *attribs )
 		int d = (day ?: @"1").intValue;
 		if( y && m )
 		{
-			NSCalendar *cal = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+			NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 			cal.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-			NSDate *pubDate = [cal dateWithEra:1 year:y month:m day:d hour:12 minute:0 second:0 nanosecond:0];
+			NSDateComponents *balls = [[NSDateComponents alloc] init];
+			balls.era = 1;
+			balls.year = y;
+			balls.month = m;
+			balls.day = d;
+			balls.hour = 12;
+			NSDate *pubDate = [cal dateFromComponents:balls];
 			if( pubDate )
 			{
 				[attribs setValue:pubDate forKey:(__bridge NSString*)kMDItemContentCreationDate];
 				didStuff = YES;
 			}
+			[cal release];
 		}
 	}
 
@@ -251,7 +259,7 @@ BOOL ParseCBI( NSData *data, NSMutableDictionary *attribs )
 {
 	NSCharacterSet *whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet;
 
-	NSDictionary *root = [NSJSONSerialization JSONObjectWithData:data options:0 error:0];
+	NSDictionary *root = [data objectFromJSONData];
 	if( !root )
 		return NO;
 
@@ -314,14 +322,21 @@ BOOL ParseCBI( NSData *data, NSMutableDictionary *attribs )
 		int m = month.intValue;
 		if( y && m )
 		{
-			NSCalendar *cal = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+			NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 			cal.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-			NSDate *pubDate = [cal dateWithEra:1 year:y month:m day:1 hour:12 minute:0 second:0 nanosecond:0];
+			NSDateComponents *balls = [[NSDateComponents alloc] init];
+			balls.era = 1;
+			balls.year = y;
+			balls.month = m;
+			balls.day = 1;
+			balls.hour = 12;
+			NSDate *pubDate = [cal dateFromComponents:balls];
 			if( pubDate )
 			{
 				[attribs setValue:pubDate forKey:(__bridge NSString*)kMDItemContentCreationDate];
 				didStuff = YES;
 			}
+			[cal release];
 		}
 	}
 
