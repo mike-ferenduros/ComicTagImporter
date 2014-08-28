@@ -59,9 +59,9 @@
 		778FEA7A1992780800604393 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 778FEA781992780800604393 /* unzip.c */; };
 		778FEA7D199278C700604393 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 778FEA7C199278C700604393 /* libz.dylib */; };
 		778FEA80199278D600604393 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 778FEA7E199278D600604393 /* ioapi.c */; };
-		778FEA8419927CBB00604393 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 778FEA8319927CBB00604393 /* XMLDictionary.m */; };
 		778FEA861992B10100604393 /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = 778FEA851992B10100604393 /* schema.xml */; };
 		778FEA891992B6DF00604393 /* schema.strings in Resources */ = {isa = PBXBuildFile; fileRef = 778FEA8B1992B6DF00604393 /* schema.strings */; };
+		77DC914719AFDC2800446019 /* NSDictionary+safety.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DC914619AFDC2800446019 /* NSDictionary+safety.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -194,10 +194,10 @@
 		778FEA7C199278C700604393 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		778FEA7E199278D600604393 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = unzip11/ioapi.c; sourceTree = SOURCE_ROOT; };
 		778FEA7F199278D600604393 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = unzip11/ioapi.h; sourceTree = SOURCE_ROOT; };
-		778FEA8219927CBB00604393 /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
-		778FEA8319927CBB00604393 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
 		778FEA851992B10100604393 /* schema.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = schema.xml; sourceTree = "<group>"; };
 		778FEA8A1992B6DF00604393 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/schema.strings; sourceTree = "<group>"; };
+		77DC914519AFDC2800446019 /* NSDictionary+safety.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+safety.h"; sourceTree = "<group>"; };
+		77DC914619AFDC2800446019 /* NSDictionary+safety.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+safety.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,11 +368,12 @@
 		778FEA641992727A00604393 /* ComicTag */ = {
 			isa = PBXGroup;
 			children = (
-				778FEA8119927CBB00604393 /* XMLDictionary */,
 				778FEA7B1992780D00604393 /* minizip */,
 				771619591993055500C40B29 /* unrar */,
 				778FEA6C1992727A00604393 /* GetMetadataForFile.mm */,
 				778FEA651992727A00604393 /* Supporting Files */,
+				77DC914519AFDC2800446019 /* NSDictionary+safety.h */,
+				77DC914619AFDC2800446019 /* NSDictionary+safety.m */,
 			);
 			path = ComicTag;
 			sourceTree = "<group>";
@@ -400,15 +401,6 @@
 			);
 			name = minizip;
 			sourceTree = "<group>";
-		};
-		778FEA8119927CBB00604393 /* XMLDictionary */ = {
-			isa = PBXGroup;
-			children = (
-				778FEA8219927CBB00604393 /* XMLDictionary.h */,
-				778FEA8319927CBB00604393 /* XMLDictionary.m */,
-			);
-			path = XMLDictionary;
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -480,7 +472,6 @@
 				771619ED1993055600C40B29 /* rawread.cpp in Sources */,
 				771619E21993055600C40B29 /* isnt.cpp in Sources */,
 				771619F41993055600C40B29 /* scantree.cpp in Sources */,
-				778FEA8419927CBB00604393 /* XMLDictionary.m in Sources */,
 				771619F71993055600C40B29 /* strfn.cpp in Sources */,
 				771619D61993055600C40B29 /* encname.cpp in Sources */,
 				771619DC1993055600C40B29 /* filefn.cpp in Sources */,
@@ -489,6 +480,7 @@
 				771619FD1993055600C40B29 /* unicode.cpp in Sources */,
 				771619D51993055600C40B29 /* dll.cpp in Sources */,
 				771619F51993055600C40B29 /* sha1.cpp in Sources */,
+				77DC914719AFDC2800446019 /* NSDictionary+safety.m in Sources */,
 				771619D41993055600C40B29 /* crypt.cpp in Sources */,
 				771619E71993055600C40B29 /* options.cpp in Sources */,
 				77161A031993055600C40B29 /* volume.cpp in Sources */,
@@ -551,11 +543,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -580,7 +572,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -590,11 +582,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -614,7 +606,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 			};
 			name = Release;
