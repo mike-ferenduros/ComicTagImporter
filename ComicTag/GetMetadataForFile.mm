@@ -245,6 +245,7 @@ BOOL ParseComicRack( NSData *data, NSMutableDictionary *attribs )
 			if( pubDate )
 			{
 				[attribs setValue:pubDate forKey:(__bridge NSString*)kMDItemContentCreationDate];
+				[attribs setValue:pubDate forKey:(__bridge NSString*)kMDItemContentModificationDate];
 				didStuff = YES;
 			}
 			[cal release];
@@ -334,6 +335,7 @@ BOOL ParseCBI( NSData *data, NSMutableDictionary *attribs )
 			if( pubDate )
 			{
 				[attribs setValue:pubDate forKey:(__bridge NSString*)kMDItemContentCreationDate];
+				[attribs setValue:pubDate forKey:(__bridge NSString*)kMDItemContentModificationDate];
 				didStuff = YES;
 			}
 			[cal release];
